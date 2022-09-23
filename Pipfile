@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+dev = "uvicorn server.app:app --reload"
+server = "uvicorn server.app:app --host 0.0.0.0 --port $PORT"
+
+[packages]
+prisma = "*"
+quart = "*"
+quart-schema = "*"
+uvicorn = "*"
+gunicorn = "*"
+flask = "*"
+flask-pydantic-spec = "*"
+fastapi = {extras = ["all"], version = "*"}
+passlib = {extras = ["argon2"], version = "*"}
+
+[dev-packages]
+black = "*"
+pylama = "*"
+
+[requires]
+python_version = "3.10"
